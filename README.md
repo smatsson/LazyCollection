@@ -67,7 +67,7 @@ Constructor: LazyCollection(source:Array)
 Methods:
   filter(callback:Function) - Filters the collection to only include elements where the callback returns true.
   map(callback:Function) - Maps each value according to the callback. 
-  take(num:Number) - Take the number of elements specified by <em>num</em>.
+  take(num:Number) - Take the number of elements specified by num.
   next() - Returns the next element in the collection or undefined if no more elements exist.
   
   
