@@ -69,6 +69,7 @@ Methods:
   map(callback:Function) - Maps each value according to the callback. 
   take(num:Number) - Take the number of elements specified by num.
   next() - Returns the next element in the collection or undefined if no more elements exist.
+  toArray() - Converts the lazy collection to a native JavaScript array.
   
   
 LazyItem:
