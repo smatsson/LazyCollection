@@ -24,12 +24,17 @@ https://github.com/smatsson/LazyCollection
     }
 
     Iterator.prototype._next = function () {
-        var res = this._source instanceof Array ?
-                  this._source[this._position++] :
-                  this._source.next();
-
-        if (res !== undefined) {
-            res = new LazyItem(res);
+        var res;
+        if (this._source instanceof Iterator) {
+            res = this._source.next();
+        }
+        else {
+            if (this._position < this._source.length) {
+                res = new LazyItem(this._source[this._position++]);
+            }
+            else {
+                res = undefined;
+            }
         }
 
         return res;

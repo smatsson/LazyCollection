@@ -1,0 +1,28 @@
+<script type="text/javascript" src="LazyCollection.js"></script>
+<script type="text/javascript">
+
+    function equal(item) {
+        return item % 2 === 0;
+    }
+
+    function doubleItem(item) {
+        return item * 2;
+    }
+
+    var source = [];
+    for (var i = 0; i < 10000000; i++) {
+        source.push(i);
+    }
+
+
+    console.time("lazy");
+    var x = new LazyCollection(source);
+    var y = x.filter(equal).map(doubleItem).take(100).toArray();
+    console.timeEnd("lazy");
+
+    console.time("native");
+    var res1 = source.filter(equal).map(doubleItem).splice(0, 100);
+    console.timeEnd("native");
+
+
+</script>
