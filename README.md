@@ -33,7 +33,7 @@ var filteredArray = myCollection.filter(equal).map(doubleItem).take(100).toArray
 // next() will return a LazyItem or undefined when no more items are found.
 var item;
 do {
-  item = y.next();
+  item = myCollection.next();
   if (item === undefined) { break; }
   console.log(item.value);
 } while (item !== undefined);
